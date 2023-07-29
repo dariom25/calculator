@@ -16,6 +16,11 @@ body{
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    width: 1000px;
-    height: 900px;
+    padding: 32px;
+}
+
+.display{
+    background-color: #c9c9c9;
+    width: 500px;
+    height: 100px;
 }
