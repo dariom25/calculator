@@ -10,6 +10,13 @@ const buttonContainer = document.querySelector(".button-container")
 
 
 //create 5 divs to contain a row of buttons
+const buttonRows = () => {
+    for (let i = 0; i < 5; i++) {
+        let row = document.createElement("div");
+        row.classList.add("row");
+        buttonContainer.appendChild(row);
+    }
+}
 
 
 //create buttons and add them to the DOM
