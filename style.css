@@ -24,3 +24,12 @@ body{
     width: 500px;
     height: 100px;
 }
+
+.buttons{
+    background-color: #c9c9c9;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    border-style: solid;
+    border-color: #9999c3;
+}
