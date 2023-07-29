@@ -6,9 +6,16 @@ green/blue = #b5ffe9
 blue-gray = #9999c3
 */
 
+body{
+    display: flex;
+    justify-content: center;
+}
+
 .calculator-body{
     background-color: #444545;
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    width: 1000px;
+    height: 900px;
 }
