@@ -5,3 +5,10 @@ red = #e71d36
 green/blue = #b5ffe9
 blue-gray = #9999c3
 */
+
+.calculator-body{
+    background-color: #444545;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
