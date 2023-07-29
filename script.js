@@ -15,7 +15,7 @@ const buttonContainer = document.querySelector(".button-container")
 //create buttons and add them to the DOM
 numbers.forEach((number) => {
     let numberBtn = document.createElement("button");
-    numberBtn.setAttribute("name", number);
+    numberBtn.textContent = number;
     numberBtn.classList.add("buttons");
     buttonContainer.appendChild(numberBtn);
 })
