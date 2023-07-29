@@ -15,8 +15,10 @@ body{
     background-color: #444545;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 32px;
+    gap: 16px;
 }
 
 .display{
