@@ -27,6 +27,12 @@ body{
     height: 100px;
 }
 
+.button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 .row{
     display: flex;
     gap: 8px;
