@@ -38,6 +38,11 @@ body{
     flex: 1; /*some buttons shall be bigger than others*/
 }
 
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
 .buttons{
     background-color: #c9c9c9;
     border-radius: 50px;
