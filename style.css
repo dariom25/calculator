@@ -31,10 +31,15 @@ body{
     gap: 4px;
 }
 
+.button-rows{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 .row{
     display: flex;
     gap: 4px;
-    flex: 1; /*some buttons shall be bigger than others*/
 }
 
 .column{
