@@ -60,7 +60,11 @@ body{
 }
 
 .buttons:hover{
-    background-color: #b4a5a6;
+    background-color: #b1b1b1;
+}
+
+.buttons:active{
+    background-color: #a1a1a1;
     border-color: #e71d36;
 }
 
