@@ -56,6 +56,12 @@ body{
     border-style: solid;
     border-color: #9999c3;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.buttons:hover{
+    background-color: #b4a5a6;
+    border-color: #e71d36;
 }
 
 #zero{
