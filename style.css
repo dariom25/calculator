@@ -35,7 +35,7 @@ body{
 
 .row{
     display: flex;
-    gap: 8px;
+    gap: 4px;
     flex: 1; /*some buttons shall be bigger than others*/
 }
 
