@@ -55,3 +55,7 @@ body{
 #zero{
     width: 132px;
 }
+
+#plus, #equal{
+    height: 132px;
+}
