@@ -55,8 +55,10 @@ body{
     width: 64px;
     border-style: solid;
     border-color: #9999c3;
-    font-size: 16px;
+    font-size: 24px;
+    font-family: Prompt, Roboto, Times;
     cursor: pointer;
+
 }
 
 .buttons:hover{
