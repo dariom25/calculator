@@ -27,6 +27,12 @@ body{
     height: 100px;
 }
 
+.row{
+    display: flex;
+    gap: 8px;
+    flex: 1; /*some buttons shall be bigger than others*/
+}
+
 .buttons{
     background-color: #c9c9c9;
     border-radius: 50px;
