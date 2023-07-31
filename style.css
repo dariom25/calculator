@@ -67,7 +67,7 @@ body{
 
 .buttons:active{
     background-color: #a1a1a1;
-    border-color: #e71d36;
+    border-color: black;
 }
 
 #zero{
