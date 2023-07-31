@@ -1,4 +1,5 @@
 const allBtns = document.querySelectorAll(".buttons")
+const display = document.querySelector(".display")
 
 //add eventlisteners to buttons
 function addEventListenerToButtons(nodelist) {
@@ -12,7 +13,10 @@ function addEventListenerToButtons(nodelist) {
 //display buttons in display-field
 const displayButton = function(node) {
     const btnText = node.innerText;
-    console.log(btnText); //change line to display elements in display field
+    const displayText = document.createElement("div")
+    displayText.classList.add("calculations")
+    displayText.textContent = btnText
+    display.appendChild(displayText)
 }
 
 addEventListenerToButtons(allBtns)
