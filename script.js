@@ -9,9 +9,10 @@ function addEventListenerToButtons(nodelist) {
     });
 }
 
+//display buttons in display-field
 const displayButton = function(node) {
     const btnText = node.innerText;
-    console.log(btnText);
+    console.log(btnText); //change line to display elements in display field
 }
 
 addEventListenerToButtons(allBtns)
