@@ -13,7 +13,7 @@ function addEventListenerToButtons(nodelist) {
 //display buttons in display-field
 const displayButton = function(node) {
     const btnText = node.innerText;
-    const displayText = document.createElement("div")
+    const displayText = document.createElement("div") //maybe it is smarter to add the text to the div than to create new divs
     displayText.classList.add("calculations")
     displayText.textContent = btnText
     display.appendChild(displayText)
