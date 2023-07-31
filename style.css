@@ -19,6 +19,7 @@ body{
     justify-content: center;
     padding: 32px;
     gap: 16px;
+    max-width: 268px;
 }
 
 .display{
