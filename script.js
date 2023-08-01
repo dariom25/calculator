@@ -6,7 +6,7 @@ function addEventListenerToButtons(nodelist) {
     nodelist.forEach((node, index) => {
         node.addEventListener("click", function() {
             if (index === 0) {
-                displayButton(node);
+                clearAllEntriesFromDisplay();
             } else if (index === 1) {
                 displayButton(node);
             } else if (index === 2) {
@@ -32,6 +32,11 @@ const displayButton = function(node) {
     displayText.classList.add("calculations")
     displayText.textContent = btnText
     display.appendChild(displayText)
+}
+
+const clearAllEntriesFromDisplay = function() {
+    const entries = document.querySelectorAll(".calculations")
+    entries.forEach(entry => entry.remove())
 }
 
 addEventListenerToButtons(allBtns)
