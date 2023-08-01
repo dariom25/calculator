@@ -1,5 +1,4 @@
 const allBtns = document.querySelectorAll(".buttons")
-const display = document.querySelector(".display")
 
 //add eventlisteners to buttons
 function addEventListenerToButtons(nodelist) {
@@ -31,12 +30,13 @@ const displayButton = function(node) {
     const displayText = document.createElement("div") //maybe it is smarter to add the text to the div than to create new divs --> how to deal with linebreak?
     displayText.classList.add("calculations")
     displayText.textContent = btnText
+    const display = document.querySelector(".display")
     display.appendChild(displayText)
 }
 
 const clearAllEntriesFromDisplay = function() {
-    const entries = document.querySelectorAll(".calculations")
-    entries.forEach(entry => entry.remove())
+    const entries = document.querySelectorAll(".calculations");
+    entries.forEach(entry => entry.remove());
 }
 
 addEventListenerToButtons(allBtns)
