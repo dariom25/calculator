@@ -34,12 +34,19 @@ const displayButton = function(node) {
     display.appendChild(displayText)
 }
 
+//clears the display of the calculator
 const clearAllEntriesFromDisplay = function() {
     const entries = document.querySelectorAll(".calculations");
     entries.forEach(entry => entry.remove());
 }
 
+//adds parameters up
+const addFunction = function(...numbers) {
+    return numbers.reduce((acc, cur) => acc + cur, 0);
+}
+
 addEventListenerToButtons(allBtns)
+
 
 //TODO:
 //C-Button: Delete text in display
