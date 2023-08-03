@@ -45,9 +45,15 @@ const addFunction = function(number1, number2) {
     return number1 + number2;
 }
 
+const subtractFunction = function(number1, number2) {
+    return number1 - number2;
+}
+
 //variable 1 speichert zahl A, v2 Zahl B. v3 den operator dann wird die rechnung ausgeführt und das ergebnis zwischengespeichert in v4. dann wird weitergerechnet.
 
+const operate = function(number1, operator, number2) {
 
+}
 
 addEventListenerToButtons(allBtns)
 
