@@ -1,4 +1,5 @@
 const allBtns = document.querySelectorAll(".buttons")
+let storedValues = []
 
 //add eventlisteners to buttons
 function addEventListenerToButtons(nodelist) {
@@ -8,16 +9,27 @@ function addEventListenerToButtons(nodelist) {
                 clearAllEntriesFromDisplay();
             } else if (index === 1) {
                 displayButton(node);
+                storeNumber(node);
             } else if (index === 2) {
                 displayButton(node);
+                storeNumber(node);
+
             } else if (index === 14) {
                 displayButton(node);
+                storeNumber(node);
+
             } else if (index === 15) {
                 displayButton(node);
+                storeNumber(node);
+
             } else if (index === 16) {
                 displayButton(node);
+                storeNumber(node);
+
             } else {
                 displayButton(node);
+                storeNumber(node);
+
             }
             
         });
@@ -38,6 +50,7 @@ const displayButton = function(node) {
 const clearAllEntriesFromDisplay = function() {
     const entries = document.querySelectorAll(".calculations");
     entries.forEach(entry => entry.remove());
+    storedValues = []
 }
 
 //adds parameters up
@@ -63,8 +76,16 @@ const multiplyFunction = function(number1, number2) {
 
 //variable 1 speichert zahl A, v2 Zahl B. v3 den operator dann wird die rechnung ausgeführt und das ergebnis zwischengespeichert in v4. dann wird weitergerechnet.
 
-const operate = function(number1, operator, number2) {
+const operate = function(array) {
+    let number1 = 0;
+    let operator;
+    let number2 = 0;
+}
 
+const storeNumber = function(node) {
+    const btnText = node.innerText;
+    storedValues.push(btnText);
+    console.log(storedValues);
 }
 
 addEventListenerToButtons(allBtns)
