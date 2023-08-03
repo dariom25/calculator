@@ -50,7 +50,11 @@ const subtractFunction = function(number1, number2) {
 }
 
 const divideFunction = function(number1, number2) {
-    return number1 / number2;
+    if (number2 === 0) {
+        console.log("Cant divide by zero");
+    } else {
+        return number1 / number2;
+    }
 }
 
 const multiplyFunction = function(number1, number2) {
