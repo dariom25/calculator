@@ -41,9 +41,13 @@ const clearAllEntriesFromDisplay = function() {
 }
 
 //adds parameters up
-const addFunction = function(...numbers) {
-    return numbers.reduce((acc, cur) => acc + cur, 0);
+const addFunction = function(number1, number2) {
+    return number1 + number2;
 }
+
+//variable 1 speichert zahl A, v2 Zahl B. v3 den operator dann wird die rechnung ausgeführt und das ergebnis zwischengespeichert in v4. dann wird weitergerechnet.
+
+
 
 addEventListenerToButtons(allBtns)
 
