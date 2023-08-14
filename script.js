@@ -1,5 +1,10 @@
 const allBtns = document.querySelectorAll(".buttons")
-let storedValues = []
+const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+const operators = ["+", "-", "*", "/"]
+
+let number1 = "empty"
+let number2 = "empty"
+let operator = "empty"
 
 //add eventlisteners to buttons
 function addEventListenerToButtons(nodelist) {
@@ -64,7 +69,7 @@ const subtractFunction = function(number1, number2) {
 
 const divideFunction = function(number1, number2) {
     if (number2 === 0) {
-        console.log("Cant divide by zero");
+        console.log("Can't divide by zero");
     } else {
         return number1 / number2;
     }
@@ -76,16 +81,21 @@ const multiplyFunction = function(number1, number2) {
 
 //variable 1 speichert zahl A, v2 Zahl B. v3 den operator dann wird die rechnung ausgeführt und das ergebnis zwischengespeichert in v4. dann wird weitergerechnet.
 
-const operate = function(array) {
-    let number1 = 0;
-    let operator;
-    let number2 = 0;
-}
 
 const storeNumber = function(node) {
     const btnText = node.innerText;
-    storedValues.push(btnText);
-    console.log(storedValues);
+    if (number1 === "empty") {
+        number1 = btnText;
+    } else if (number1 !== "empty" && numbers.includes(btnText) && operator === "empty") {
+        number1 += btnText;
+    } else if (operators.includes(btnText) && operator === "empty") {
+        operator = btnText;
+    } else if (operator !== "empty") {
+        //operate()
+    } else if (number1 !== "empty" && operator !== "empty") { //wont add btnText to number2
+        number2 = btnText;
+    } 
+    console.log(number1)
 }
 
 addEventListenerToButtons(allBtns)
@@ -97,6 +107,9 @@ addEventListenerToButtons(allBtns)
 //- Button: Function to subtract numbers
 //* Button: Function to multiply numbers
 // /-Button: Funcion to divide numbers
-//Logic like Punkt vor Strich
 //= Button to calculate the result
-//Calculation-logic: Add every event into an array?
+
+
+//Wenn Z1 == 0:
+    //Z1 == neue Zahl
+//Sonst, wenn 
