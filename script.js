@@ -90,12 +90,13 @@ const storeNumber = function(node) {
         number1 += btnText;
     } else if (operators.includes(btnText) && operator === "empty") {
         operator = btnText;
-    } else if (operator !== "empty") {
+    } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator
         //operate()
-    } else if (number1 !== "empty" && operator !== "empty") { //wont add btnText to number2
+    } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { 
         number2 = btnText;
-    } 
-    console.log(number1)
+    } else if (number1 !== "empty" && operator !== "empty" && number2 !== "empty") {
+        number2 += btnText;
+    }
 }
 
 addEventListenerToButtons(allBtns)
