@@ -18,19 +18,14 @@ function addEventListenerToButtons(nodelist) {
             } else if (index === 2) {
                 displayButton(node);
                 storeNumber(node);
-
             } else if (index === 14) {
                 displayButton(node);
                 storeNumber(node);
-
             } else if (index === 15) {
                 displayButton(node);
                 storeNumber(node);
-
             } else if (index === 16) {
-                displayButton(node);
-                storeNumber(node);
-
+                operate(number1, number2, operator)
             } else {
                 displayButton(node);
                 storeNumber(node);
@@ -81,7 +76,7 @@ const multiplyFunction = function(number1, number2) {
 
 const operate = function(number1, number2, operator) {
     if (operator === "+") {
-        addFunction(number1, number2);
+        console.log(addFunction(parseFloat(number1), parseFloat(number2)));
     } else if (operator === "-") {
         subtractFunction(number1, number2);
     } else if (operator === "*") {
@@ -100,7 +95,7 @@ const storeNumber = function(node) {
     } else if (operators.includes(btnText) && operator === "empty") {
         operator = btnText;
     } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
-        //operate()
+        operate(number1, number2, operator)
     } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { 
         number2 = btnText;
     } else if (number1 !== "empty" && operator !== "empty" && number2 !== "empty") {
