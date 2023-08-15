@@ -51,6 +51,9 @@ const clearAllEntriesFromDisplay = function() {
     const entries = document.querySelectorAll(".calculations");
     entries.forEach(entry => entry.remove());
     storedValues = []
+    number1 = "empty"
+    number2 = "empty"
+    operator = "empty"
 }
 
 //adds parameters up
