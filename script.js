@@ -110,14 +110,6 @@ addEventListenerToButtons(allBtns)
 
 
 //TODO:
-//C-Button: Delete text in display
-//+ Button: Function to add numbers
-//- Button: Function to subtract numbers
-//* Button: Function to multiply numbers
-// /-Button: Funcion to divide numbers
-//= Button to calculate the result
-
-
-//Wenn Z1 == 0:
-    //Z1 == neue Zahl
-//Sonst, wenn 
+//Wenn etwas ausgerechnet wird, soll das Ergebnis im Display erscheinen
+//Wenn ein zweites Mal ein Operand genutzt wird, soll gerechnet werden und das Ergebnis weiterverwendet werden
+//Zu Beginn soll eine 0 im Display angezeigt werden
