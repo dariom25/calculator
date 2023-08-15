@@ -79,8 +79,17 @@ const multiplyFunction = function(number1, number2) {
     return number1 * number2;
 }
 
-//variable 1 speichert zahl A, v2 Zahl B. v3 den operator dann wird die rechnung ausgeführt und das ergebnis zwischengespeichert in v4. dann wird weitergerechnet.
-
+const operate = function(number1, number2, operator) {
+    if (operator === "+") {
+        addFunction(number1, number2);
+    } else if (operator === "-") {
+        subtractFunction(number1, number2);
+    } else if (operator === "*") {
+        multiplyFunction(number1, number2);
+    } else if (operator === "/") {
+        divideFunction(number1, number2);
+    }
+}
 
 const storeNumber = function(node) {
     const btnText = node.innerText;
@@ -90,7 +99,7 @@ const storeNumber = function(node) {
         number1 += btnText;
     } else if (operators.includes(btnText) && operator === "empty") {
         operator = btnText;
-    } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator
+    } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
         //operate()
     } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { 
         number2 = btnText;
