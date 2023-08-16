@@ -48,16 +48,22 @@ const displayButton = function(node) {
 }
 
 //clears the display of the calculator
-const clearAllEntriesFromDisplay = function() {
-    const entries = document.querySelectorAll(".calculations");
-    entries.forEach(entry => entry.remove());
-    number1 = "empty"
-    number2 = "empty"
-    operator = "empty"
-    result = "empty"
+const clearAll = function() {
+    clearDisplay();    
+    clearStoredValues();
 }
 
+const clearDisplay = function() {
+    const entries = document.querySelectorAll(".calculations");
+    entries.forEach(entry => entry.remove());
+}
 
+const clearStoredValues = function() {
+    number1 = "empty";
+    number2 = "empty";
+    operator = "empty";
+    result = "empty";
+}
 
 //adds parameters up
 const addFunction = function(number1, number2) {
