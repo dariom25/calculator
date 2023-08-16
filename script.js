@@ -5,6 +5,7 @@ const operators = ["+", "-", "*", "/"]
 let number1 = "empty"
 let number2 = "empty"
 let operator = "empty"
+let result = "empty"
 
 //add eventlisteners to buttons
 function addEventListenerToButtons(nodelist) {
@@ -50,11 +51,13 @@ const displayButton = function(node) {
 const clearAllEntriesFromDisplay = function() {
     const entries = document.querySelectorAll(".calculations");
     entries.forEach(entry => entry.remove());
-    storedValues = []
     number1 = "empty"
     number2 = "empty"
     operator = "empty"
+    result = "empty"
 }
+
+
 
 //adds parameters up
 const addFunction = function(number1, number2) {
@@ -79,13 +82,13 @@ const multiplyFunction = function(number1, number2) {
 
 const operate = function(number1, number2, operator) {
     if (operator === "+") {
-        console.log(addFunction(parseFloat(number1), parseFloat(number2)));
+        result  = addFunction(parseFloat(number1), parseFloat(number2));
     } else if (operator === "-") {
-        subtractFunction(number1, number2);
+        result = subtractFunction(parseFloat(number1), parseFloat(number2));
     } else if (operator === "*") {
-        multiplyFunction(number1, number2);
+        result = multiplyFunction(parseFloat(number1), parseFloat(number2));
     } else if (operator === "/") {
-        divideFunction(number1, number2);
+        result = divideFunction(parseFloat(number1), parseFloat(number2));
     }
 }
 
