@@ -12,7 +12,7 @@ function addEventListenerToButtons(nodelist) {
     nodelist.forEach((node, index) => {
         node.addEventListener("click", function() {
             if (index === 0) {
-                clearAllEntriesFromDisplay();
+                clearAll();
             } else if (index === 1) {
                 displayButton(node);
                 storeNumber(node);
@@ -40,9 +40,17 @@ function addEventListenerToButtons(nodelist) {
 //display buttons in display-field
 const displayButton = function(node) {
     const btnText = node.innerText;
-    const displayText = document.createElement("div") //maybe it is smarter to add the text to the div than to create new divs --> how to deal with linebreak?
+    const displayText = document.createElement("div"); //maybe it is smarter to add the text to the div than to create new divs --> how to deal with linebreak?
+    displayText.classList.add("calculations");
+    displayText.textContent = btnText;
+    const display = document.querySelector(".display");
+    display.appendChild(displayText);
+}
+
+const displayResult = function(result) {
+    const displayText = document.createElement("div")
     displayText.classList.add("calculations")
-    displayText.textContent = btnText
+    displayText.textContent = result
     const display = document.querySelector(".display")
     display.appendChild(displayText)
 }
@@ -96,6 +104,8 @@ const operate = function(number1, number2, operator) {
     } else if (operator === "/") {
         result = divideFunction(parseFloat(number1), parseFloat(number2));
     }
+    clearDisplay();
+
 }
 
 const storeNumber = function(node) {
