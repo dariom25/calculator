@@ -105,7 +105,8 @@ const operate = function(number1, number2, operator) {
         result = divideFunction(parseFloat(number1), parseFloat(number2));
     }
     clearDisplay();
-
+    displayResult(result);
+    number1 = toString(result);
 }
 
 const storeNumber = function(node) {
