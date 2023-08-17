@@ -26,7 +26,8 @@ function addEventListenerToButtons(nodelist) {
                 displayButton(node);
                 storeNumber(node);
             } else if (index === 16) {
-                operate(number1, number2, operator)
+                operate(number1, number2, operator);
+                operator = "empty";
             } else {
                 displayButton(node);
                 storeNumber(node);
@@ -109,7 +110,6 @@ const operate = function(no1, no2, operand) {
     displayValue(result);
     number1 = result.toString();
     number2 = "empty";
-    operator = "empty";
     result = "empty";
 }
 
@@ -121,6 +121,8 @@ const storeNumber = function(node) {
         number1 += btnText;
     } else if (operators.includes(btnText) && operator === "empty") {
         operator = btnText;
+    } else if (operators.includes(btnText) && operator === "empty") {
+        
     } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
         operate(number1, number2, operator)
         displayValue(operator)
@@ -135,6 +137,6 @@ addEventListenerToButtons(allBtns)
 
 
 //TODO:
-//Wenn ein zweites Mal ein Operand genutzt wird, soll gerechnet werden und das Ergebnis weiterverwendet werden
+//Wenn ein zweites Mal ein Operand gewählt wird, soll der Operand überschrieben werden
 //Zu Beginn soll eine 0 im Display angezeigt werden
 //Wenn eine Rechnung durchgeführt wird und erneut eine Zahl gedrückt wird, soll mit der Zahl weitergearbeitet werden 
