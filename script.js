@@ -135,6 +135,6 @@ addEventListenerToButtons(allBtns)
 
 
 //TODO:
-//Wenn etwas ausgerechnet wird, soll das Ergebnis im Display erscheinen
 //Wenn ein zweites Mal ein Operand genutzt wird, soll gerechnet werden und das Ergebnis weiterverwendet werden
 //Zu Beginn soll eine 0 im Display angezeigt werden
+//Wenn eine Rechnung durchgeführt wird und erneut eine Zahl gedrückt wird, soll mit der Zahl weitergearbeitet werden 
