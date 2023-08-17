@@ -113,6 +113,15 @@ const operate = function(no1, no2, operand) {
     result = "empty";
 }
 
+const removeOperator = function() {
+    const operand = document.getElementsByClassName("calculations")
+    operand.forEach((element) => {
+        if (operators.includes(element)) {
+            element.remove();
+        };
+    }) 
+}
+
 const storeNumber = function(node) {
     const btnText = node.innerText;
     if (number1 === "empty") {
@@ -121,8 +130,8 @@ const storeNumber = function(node) {
         number1 += btnText;
     } else if (operators.includes(btnText) && operator === "empty") {
         operator = btnText;
-    } else if (operators.includes(btnText) && operator === "empty") {
-        
+    } else if (operators.includes(btnText) && operator !== "empty" && number2 === "empty") {
+        operator = btnText;
     } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
         operate(number1, number2, operator)
         displayValue(operator)
