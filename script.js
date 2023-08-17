@@ -47,7 +47,7 @@ const displayButton = function(node) {
     display.appendChild(displayText);
 }
 
-const displayResult = function(result) {
+const displayValue = function(result) {
     const displayText = document.createElement("div")
     displayText.classList.add("calculations")
     displayText.textContent = result
@@ -85,6 +85,7 @@ const subtractFunction = function(number1, number2) {
 const divideFunction = function(number1, number2) {
     if (number2 === 0) {
         console.log("Can't divide by zero");
+        return "empty";
     } else {
         return number1 / number2;
     }
@@ -94,19 +95,22 @@ const multiplyFunction = function(number1, number2) {
     return number1 * number2;
 }
 
-const operate = function(number1, number2, operator) {
-    if (operator === "+") {
-        result  = addFunction(parseFloat(number1), parseFloat(number2));
-    } else if (operator === "-") {
-        result = subtractFunction(parseFloat(number1), parseFloat(number2));
-    } else if (operator === "*") {
-        result = multiplyFunction(parseFloat(number1), parseFloat(number2));
-    } else if (operator === "/") {
-        result = divideFunction(parseFloat(number1), parseFloat(number2));
+const operate = function(no1, no2, operand) {
+    if (operand === "+") {
+        result  = addFunction(parseFloat(no1), parseFloat(no2));
+    } else if (operand === "-") {
+        result = subtractFunction(parseFloat(no1), parseFloat(no2));
+    } else if (operand === "*") {
+        result = multiplyFunction(parseFloat(no1), parseFloat(no2));
+    } else if (operand === "/") {
+        result = divideFunction(parseFloat(no1), parseFloat(no2));
     }
     clearDisplay();
-    displayResult(result);
-    number1 = toString(result);
+    displayValue(result);
+    number1 = result.toString();
+    number2 = "empty";
+    operator = "empty";
+    result = "empty";
 }
 
 const storeNumber = function(node) {
@@ -119,6 +123,7 @@ const storeNumber = function(node) {
         operator = btnText;
     } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
         operate(number1, number2, operator)
+        displayValue(operator)
     } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { 
         number2 = btnText;
     } else if (number1 !== "empty" && operator !== "empty" && number2 !== "empty") {
