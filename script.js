@@ -31,7 +31,6 @@ function addEventListenerToButtons(nodelist) {
             } else {
                 displayButton(node);
                 storeNumber(node);
-
             }
             
         });
@@ -127,21 +126,21 @@ const storeNumber = function(node) {
     const btnText = node.innerText;
     if (number1 === "empty" && numbers.includes(btnText)) {
         number1 = btnText;
-    } else if (number1 !== "empty" && numbers.includes(btnText) && operator === "empty") {
+    } else if (number1 !== "empty" && numbers.includes(btnText) && operator === "empty") { //adds to number1
         number1 += btnText;
-    } else if (operators.includes(btnText) && operator === "empty") {
+    } else if (operators.includes(btnText) && operator === "empty") { //adds to number1
         operator = btnText;
     } else if (operators.includes(btnText) && operator !== "empty" && number2 === "empty") { //overwrites current operator
         removeOperator();
         operator = btnText;
         displayValue(operator)
-    } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
+    } else if (operators.includes(btnText) && operator !== "empty") { //operates and takes new operator
         operate(number1, number2, operator)
         operator = btnText;
         displayValue(operator)
-    } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { 
+    } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { //add2 to number2
         number2 = btnText;
-    } else if (number1 !== "empty" && operator !== "empty" && number2 !== "empty") {
+    } else if (number1 !== "empty" && operator !== "empty" && number2 !== "empty") { //adds to number2
         number2 += btnText;
     }
 }
@@ -153,3 +152,5 @@ addEventListenerToButtons(allBtns)
 //Wenn ein operator direkt zu Beginn ausgewählt wird, wird er auf dem Display angezeigt und zu number1 hinzugefügt 
 //Zu Beginn soll eine 0 im Display angezeigt werden
 //Wenn eine Rechnung durchgeführt wird und erneut eine Zahl gedrückt wird, soll mit der Zahl weitergearbeitet werden 
+//Kommas ermöglichen
+//Tastatureingaben ermöglichen
