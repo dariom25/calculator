@@ -114,9 +114,10 @@ const operate = function(no1, no2, operand) {
 }
 
 const removeOperator = function() {
-    const operand = document.getElementsByClassName("calculations")
+    const operand = document.querySelectorAll(".calculations")
     operand.forEach((element) => {
-        if (operators.includes(element)) { //hier gibts wohl noch probleme
+        let textOfElement = element.textContent;
+        if (operators.includes(textOfElement)) { 
             element.remove();
         };
     }); 
@@ -130,11 +131,13 @@ const storeNumber = function(node) {
         number1 += btnText;
     } else if (operators.includes(btnText) && operator === "empty") {
         operator = btnText;
-    } else if (operators.includes(btnText) && operator !== "empty" && number2 === "empty") {
+    } else if (operators.includes(btnText) && operator !== "empty" && number2 === "empty") { //overwrites current operator
         removeOperator();
         operator = btnText;
+        displayValue(operator)
     } else if (operators.includes(btnText) && operator !== "empty") { //operator needs to take the new operator and result
         operate(number1, number2, operator)
+        operator = btnText;
         displayValue(operator)
     } else if (number1 !== "empty" && operator !== "empty" && number2 === "empty") { 
         number2 = btnText;
@@ -147,7 +150,6 @@ addEventListenerToButtons(allBtns)
 
 
 //TODO:
-//Wenn ein zweites Mal ein Operand gewählt wird, soll der Operand überschrieben werden
 //Wenn ein operator direkt zu Beginn ausgewählt wird, wird er auf dem Display angezeigt und zu number1 hinzugefügt 
 //Zu Beginn soll eine 0 im Display angezeigt werden
 //Wenn eine Rechnung durchgeführt wird und erneut eine Zahl gedrückt wird, soll mit der Zahl weitergearbeitet werden 
