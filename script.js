@@ -92,35 +92,47 @@ const clearStoredValues = function() {
 
 //adds parameters up
 const addFunction = function(number1, number2) {
+    number1 = parseFloat(number1)
+    number2 = parseFloat(number2)
     return number1 + number2;
 }
 
 const subtractFunction = function(number1, number2) {
+    number1 = parseFloat(number1)
+    number2 = parseFloat(number2)
     return number1 - number2;
 }
 
 const divideFunction = function(number1, number2) {
     if (number2 === 0) {
-        console.log("Can't divide by zero");
+        alert("Can't divide by zero");
         return "empty";
     } else {
+        number1 = parseFloat(number1)
+        number2 = parseFloat(number2)
         return number1 / number2;
     }
 }
 
 const multiplyFunction = function(number1, number2) {
+    number1 = parseFloat(number1)
+    number2 = parseFloat(number2)
     return number1 * number2;
 }
 
 const operate = function(no1, no2, operand) {
     if (operand === "+") {
         result  = addFunction(parseFloat(no1), parseFloat(no2));
+        result = parseFloat(result).toFixed(2);
     } else if (operand === "-") {
         result = subtractFunction(parseFloat(no1), parseFloat(no2));
+        result = parseFloat(result).toFixed(2);
     } else if (operand === "*") {
         result = multiplyFunction(parseFloat(no1), parseFloat(no2));
+        result = parseFloat(result).toFixed(2);
     } else if (operand === "/") {
         result = divideFunction(parseFloat(no1), parseFloat(no2));
+        result = parseFloat(result).toFixed(2);
     }
     clearDisplay();
     displayValue(result);
@@ -167,5 +179,5 @@ addEventListenerToButtons(allBtns)
 
 //TODO:
 //Zu Beginn soll eine 0 im Display angezeigt werden 
-//Kommas ermöglichen
+//Kommas ermöglichen --> nachkommastellen müssen begrenzt werden
 //Tastatureingaben ermöglichen
