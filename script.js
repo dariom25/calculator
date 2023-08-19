@@ -13,21 +13,23 @@ function addEventListenerToButtons(nodelist) {
         node.addEventListener("click", function() {
             if (index === 0) {
                 clearAll();
-            } else if (index === 1) {
+            } else if (index === 1 && number1 !== "empty") {
                 displayButton(node);
                 storeNumber(node);
-            } else if (index === 2) {
+            } else if (index === 2 && number1 !== "empty") {
                 displayButton(node);
                 storeNumber(node);
-            } else if (index === 14) {
+            } else if (index === 14 && number1 !== "empty") {
                 displayButton(node);
                 storeNumber(node);
-            } else if (index === 15) {
+            } else if (index === 15 && number1 !== "empty") {
                 displayButton(node);
                 storeNumber(node);
             } else if (index === 16) {
                 operate(number1, number2, operator);
                 operator = "empty";
+            } else if (index === 1 || index === 2 || index === 14 || index === 15 && operator === "empty") {
+                alert("Ungültige Eingabe!")
             } else {
                 displayButton(node);
                 storeNumber(node);
@@ -150,7 +152,6 @@ addEventListenerToButtons(allBtns)
 
 //TODO:
 //Wenn ein operator direkt zu Beginn ausgewählt wird, wird er auf dem Display angezeigt und zu number1 hinzugefügt 
-//Zu Beginn soll eine 0 im Display angezeigt werden
-//Wenn eine Rechnung durchgeführt wird und erneut eine Zahl gedrückt wird, soll mit der Zahl weitergearbeitet werden 
+//Zu Beginn soll eine 0 im Display angezeigt werden 
 //Kommas ermöglichen
 //Tastatureingaben ermöglichen
