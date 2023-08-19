@@ -27,11 +27,15 @@ function addEventListenerToButtons(nodelist) {
                 displayButton(node);
                 storeNumber(node);
             } else if (index === 16) {
-                operate(number1, number2, operator);
-                operator = "empty";
-                counter++;
+                if (number1 === "empty" || number2 === "empty" || operator === "empty") {
+                    alert("Enter a full calculation!")
+                } else {
+                    operate(number1, number2, operator);
+                    operator = "empty";
+                    counter++;
+                }
             } else if (index === 1 || index === 2 || index === 14 || index === 15 && operator === "empty") {
-                alert("Ungültige Eingabe!")
+                alert("Invalid input!")
             } else {
                 if (counter % 2 === 1) {
                     clearAll();
