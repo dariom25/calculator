@@ -6,6 +6,7 @@ let number1 = "empty"
 let number2 = "empty"
 let operator = "empty"
 let result = "empty"
+let counter = 0
 
 //add eventlisteners to buttons
 function addEventListenerToButtons(nodelist) {
@@ -28,11 +29,20 @@ function addEventListenerToButtons(nodelist) {
             } else if (index === 16) {
                 operate(number1, number2, operator);
                 operator = "empty";
+                counter++;
             } else if (index === 1 || index === 2 || index === 14 || index === 15 && operator === "empty") {
                 alert("Ungültige Eingabe!")
             } else {
-                displayButton(node);
-                storeNumber(node);
+                if (counter % 2 === 1) {
+                    clearAll();
+                    displayButton(node);
+                    storeNumber(node);
+                    counter = 0;
+                } else if (counter % 2 === 0) {
+                    displayButton(node);
+                    storeNumber(node);
+                }
+                
             }
             
         });
@@ -73,6 +83,7 @@ const clearStoredValues = function() {
     number2 = "empty";
     operator = "empty";
     result = "empty";
+    counter = 0;
 }
 
 //adds parameters up
@@ -151,7 +162,6 @@ addEventListenerToButtons(allBtns)
 
 
 //TODO:
-//Wenn ein operator direkt zu Beginn ausgewählt wird, wird er auf dem Display angezeigt und zu number1 hinzugefügt 
 //Zu Beginn soll eine 0 im Display angezeigt werden 
 //Kommas ermöglichen
 //Tastatureingaben ermöglichen
