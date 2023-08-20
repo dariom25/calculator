@@ -188,5 +188,5 @@ addEventListenerToButtons(allBtns)
 
 //TODO:
 //Zu Beginn soll eine 0 im Display angezeigt werden 
-//Nur ein Komma pro Zahl
 //Tastatureingaben ermöglichen
+//negative Zahlen können noch nicht eingegeben werden
