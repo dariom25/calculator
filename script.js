@@ -1,5 +1,5 @@
 const allBtns = document.querySelectorAll(".buttons")
-const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."]
 const operators = ["+", "-", "*", "/"]
 
 let number1 = "empty"
@@ -36,6 +36,15 @@ function addEventListenerToButtons(nodelist) {
                 }
             } else if (index === 1 || index === 2 || index === 14 || index === 15 && operator === "empty") {
                 alert("Invalid input!")
+            } else if (index === 13) {
+                if (number1.includes(".") && number2 === "empty") {
+                    alert("Invalid input");
+                } else if (number2.includes(".") && number1 !== "empty") {
+                    alert("Invalid input");
+                } else {
+                    displayButton(node);
+                    storeNumber(node);
+                }
             } else {
                 if (counter % 2 === 1) {
                     clearAll();
@@ -179,4 +188,5 @@ addEventListenerToButtons(allBtns)
 
 //TODO:
 //Zu Beginn soll eine 0 im Display angezeigt werden 
+//Nur ein Komma pro Zahl
 //Tastatureingaben ermöglichen
