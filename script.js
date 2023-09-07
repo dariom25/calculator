@@ -20,13 +20,13 @@ function addEventListenerToButtons(nodelist) {
             } else if (index === 2 && number1 !== "empty") {
                 displayButton(node);
                 storeNumber(node);
-            } else if (index === 14 && number1 !== "empty") {
-                displayButton(node);
-                storeNumber(node);
             } else if (index === 15 && number1 !== "empty") {
                 displayButton(node);
                 storeNumber(node);
-            } else if (index === 16) {
+            } else if (index === 16 && number1 !== "empty") {
+                displayButton(node);
+                storeNumber(node);
+            } else if (index === 17) {
                 if (number1 === "empty" || number2 === "empty" || operator === "empty") {
                     alert("Enter a full calculation!")
                 } else {
@@ -34,9 +34,9 @@ function addEventListenerToButtons(nodelist) {
                     operator = "empty";
                     counter++;
                 }
-            } else if (index === 1 || index === 2 || index === 14 || index === 15 && operator === "empty") {
+            } else if (index === 1 || index === 2 || index === 15 || index === 16 && operator === "empty") {
                 alert("Invalid input!")
-            } else if (index === 13) {
+            } else if (index === 14) {
                 if (number1.includes(".") && number2 === "empty") {
                     alert("Invalid input");
                 } else if (number2.includes(".") && number1 !== "empty") {
@@ -65,7 +65,7 @@ function addEventListenerToButtons(nodelist) {
 //display buttons in display-field
 const displayButton = function(node) {
     const btnText = node.innerText;
-    const displayText = document.createElement("div"); //maybe it is smarter to add the text to the div than to create new divs --> how to deal with linebreak?
+    const displayText = document.createElement("div");
     displayText.classList.add("calculations");
     displayText.textContent = btnText;
     const display = document.querySelector(".display");
